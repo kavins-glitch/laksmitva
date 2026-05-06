@@ -13,24 +13,42 @@
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav id="mainNav" aria-label="Primary navigation">
-    <div class="container nav-inner">
-      <a class="nav-logo" href="./index.html">Laksmitva <span>Global Industries</span></a>
+  <!-- CURSOR (desktop only via CSS) -->
+  <div id="cur-dot"></div>
+  <div id="cur-ring"></div>
 
-      <ul class="nav-links" aria-label="Desktop navigation">
-        <li><a data-nav href="./index.html">Home</a></li>
-        <li><a data-nav href="./about.html">About</a></li>
-        <li><a data-nav href="./leadership.html">Leadership</a></li>
-        <li><a data-nav href="./businesses.html">Businesses</a></li>
-        <li><a data-nav href="./strategy.html">Strategy</a></li>
-        <li><a data-nav href="./contact.html">Contact</a></li>
-      </ul>
+  <!-- LOADER -->
+  <div id="loader" aria-label="Loading">
+    <div class="ld-gem">LGI</div>
+    <div class="ld-text">Laksmitva Global Industries</div>
+    <div class="ld-bar"><div class="ld-bar-fill"></div></div>
+  </div>
 
-      <div style="display:flex; gap:10px; align-items:center;">
-        <a class="nav-cta" href="./contact.html">Partner With Us</a>
-        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" type="button">☰</button>
+  <!-- ══════════ NAVIGATION (AGF-style) ══════════ -->
+  <nav id="nav" aria-label="Primary navigation">
+    <a href="#home" class="nav-brand">
+      <div class="nav-gem">LGI</div>
+      <div class="nav-brand-text">
+        <span class="n">Laksmitva Global Industries LLP</span>
+        <span class="s">Registered LLP · India · MCA Compliant</span>
       </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#home" class="act">Home</a></li>
+      <li><a href="#focus">Focus</a></li>
+      <li><a href="#momentum">Momentum</a></li>
+      <li><a href="#initiatives">Initiatives</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contactCta">Contact</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <a href="#initiatives" class="nav-csr">Partner</a>
+      <a href="#contactCta" class="nav-donate">Get In Touch</a>
+      <button class="hamburger" id="burger" aria-label="Menu" aria-expanded="false" type="button">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
@@ -38,22 +56,22 @@
   <div class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation">
     <div class="container">
       <ul class="mobile-links">
-        <li><a data-nav href="./index.html">Home</a></li>
-        <li><a data-nav href="./about.html">About</a></li>
-        <li><a data-nav href="./leadership.html">Leadership</a></li>
-        <li><a data-nav href="./businesses.html">Businesses</a></li>
-        <li><a data-nav href="./strategy.html">Strategy</a></li>
-        <li><a data-nav href="./contact.html">Contact</a></li>
+        <li><a href="#home" class="act">Home</a></li>
+        <li><a href="#focus">Focus</a></li>
+        <li><a href="#momentum">Momentum</a></li>
+        <li><a href="#initiatives">Initiatives</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contactCta">Contact</a></li>
       </ul>
       <div class="mobile-actions">
         <button class="btn-ghost" type="button" onclick="document.body.classList.remove('menu-open')" style="border-color: rgba(255,255,255,0.25);">Close</button>
-        <a class="btn-primary" href="./contact.html">Partner With Us</a>
+        <a class="btn-primary" href="#contactCta">Get In Touch</a>
       </div>
     </div>
   </div>
 
   <!-- HERO -->
-  <header class="hero">
+  <header class="hero" id="home">
     <div class="hero-geo"></div>
     <div class="hero-circle"></div>
     <div class="hero-glow"></div>
@@ -122,7 +140,7 @@
   </section>
 
   <!-- Sectors Preview -->
-  <section class="section-pad" style="padding-top: 70px;">
+  <section class="section-pad" id="focus" style="padding-top: 70px;">
     <div class="container">
       <div style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom: 40px; flex-wrap:wrap; gap: 14px;">
         <div>
@@ -168,7 +186,7 @@
   </section>
 
   <!-- Premium Impact + Targets (inspired by reference site) -->
-  <section class="section-pad premium-section" style="padding-top: 0;">
+  <section class="section-pad premium-section" id="momentum" style="padding-top: 0;">
     <div class="container">
       <div class="section-head">
         <div class="page-eyebrow">
@@ -230,7 +248,7 @@
   </section>
 
   <!-- Initiatives / Offerings -->
-  <section class="section-pad premium-section" style="padding-top: 0;">
+  <section class="section-pad premium-section" id="initiatives" style="padding-top: 0;">
     <div class="container">
       <div class="section-head">
         <div class="page-eyebrow">
@@ -271,7 +289,7 @@
   </section>
 
   <!-- Testimonials -->
-  <section class="section-pad premium-section" style="padding-top: 0;">
+  <section class="section-pad premium-section" id="testimonials" style="padding-top: 0;">
     <div class="container">
       <div class="section-head">
         <div class="page-eyebrow">
@@ -354,7 +372,7 @@
   </section>
 
   <!-- CTA Banner -->
-  <section style="background:var(--navy-mid); padding: 70px 0; text-align:center; position:relative; overflow:hidden;">
+  <section id="contactCta" style="background:var(--navy-mid); padding: 70px 0; text-align:center; position:relative; overflow:hidden;">
     <div style="position:absolute; inset:0; background-image:linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.03) 1px,transparent 1px); background-size:40px 40px;"></div>
     <div class="container" style="position:relative; z-index:1;">
       <p style="font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:16px;">Global Ambition</p>
