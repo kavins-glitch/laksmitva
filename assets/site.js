@@ -71,9 +71,41 @@ function wireContactForm() {
   });
 }
 
+function wireFaqAccordion() {
+  const root = document.getElementById('faq');
+  if (!root) return;
+
+  const items = Array.from(root.querySelectorAll('details.faq-item'));
+  items.forEach((item) => {
+    item.addEventListener('toggle', () => {
+      if (!item.open) return;
+      items.forEach((other) => {
+        if (other !== item) other.open = false;
+      });
+    });
+  });
+}
+
+function wireNewsletter() {
+  const form = document.getElementById('newsletterForm');
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('newsletterEmail')?.value?.trim();
+    if (!email) return;
+    const msg = document.getElementById('newsletterMsg');
+    if (msg) msg.style.display = 'block';
+    const input = document.getElementById('newsletterEmail');
+    if (input) input.value = '';
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   setActiveNav();
   wireNav();
   wireContactForm();
+  wireFaqAccordion();
+  wireNewsletter();
 });
 
